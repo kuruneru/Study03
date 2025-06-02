@@ -1,4 +1,4 @@
-public class Magician extends Character{
+public class Magician extends Ally implements Member{
 
     /* コンストラクタ */
     public Magician(String name, int hp, int atk) {
@@ -6,7 +6,7 @@ public class Magician extends Character{
     }
 
     /* 指定のキャラの攻撃力を2倍に */
-    public void skill() {
+    public void skill(Character c) {
 
     }
 }

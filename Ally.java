@@ -5,7 +5,7 @@ public class Ally extends Character{
     /* コンストラクタ(IDも設定) */
     public Ally(String name, int hp, int atk) {
         super(name, hp, atk);
-        this.id = count;
+        this.id = count++;
     }
 
     /* ステータスとIDを出力 */
