@@ -1,0 +1,70 @@
+\documentclass{jlreq}
+
+\usepackage{amsmath, amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{listings, xcolor}
+
+\lstset{
+  basicstyle = {\ttfamily}, % 基本的なフォントスタイル 
+  frame = {tbrl}, % 枠線の枠線。t: top, b: bottom, r: right, l: left
+  breaklines = true, % 長い行の改行
+  numbers = left, % 行番号の表示。left, right, none
+  showspaces = false, % スペースの表示
+  showstringspaces = false, % 文字列中のスペースの表示
+  showtabs = false, %　タブの表示
+  keywordstyle = \color{blue}, % キーワードのスタイル。intやwhileなど
+  commentstyle = {\color[HTML]{1AB91A}}, % コメントのスタイル
+  identifierstyle = \color{black}, % 識別子のスタイル　関数名や変数名
+  stringstyle = \color{brown}, % 文字列のスタイル
+  captionpos = t % キャプションの位置 t: 上、b: 下
+}
+
+\title{Study03}
+\author{細川 夏風}
+\date{\today}
+
+\begin{document}
+
+  \maketitle
+
+  \section{仕様書との変更点}
+  仕様書から変更した点は1つある．それはAlly.javaにsetterを追加したことだ．setId()メソッド(setter)を追加しこれにより，IDを固定化し無限ループに対応することができるようになった．
+
+  \section{それぞれのファイルの工夫点}
+  \subsection{Study03.java}
+  Study03.javaの工夫点は$2$つある．それぞれ以下に示す．
+  \begin{enumerate}[(1). ]
+    \item 変更点にも示したように，setterを追加し，IDを追加した．
+    \item パーティーメンバーの攻撃の処理について，instanceofを用いて，それぞれのクラスのインスタンスに応じてskillを変更できるようにした．
+  \end{enumerate}
+
+  \subsection{Character.java}
+  Character.javaの工夫点は$2$つある．それぞれを以下に示す．
+  \begin{enumerate}[(1). ]
+    \item ダメージや残りHPの処理をdamege()メソッドやattack()メソッドで完結させることにより，Study03でやらなければならない処理をできるだけ減らした．
+    \item 攻撃力のリセットにもinstanceofを用いてわかりやすく場合分けを行った．
+  \end{enumerate}
+
+  \subsection{Ally.java}
+  Ally.javaの工夫点は$2$つある．それぞれ以下に示す．
+  \begin{enumerate}[(1). ]
+    \item コンストラクタやメソッドなどできるだけ継承元のものを用いた．
+    \item setterを作成し，変更点を最小化することにより仕様書を無理に変えなくても難しいものではなくなった．
+  \end{enumerate}
+
+  \subsection{Hero以外の職業クラス}
+  Hero以外の職業クラスの$2$つある．それぞれ以下に示す．
+  \begin{enumerate}[(1). ]
+    \item Knightクラスでは攻撃力を$3$倍にするが，受け渡したり，表示させたりする数を$3$倍にする事により，もとに戻す処理を行う必要が無くなった(Knightにおいて)．
+    \item Monkクラスでは回復の処理をinstanceofを用いることにより，ケース分類を行った．視覚的にそれぞれのケースを理解可能にしている．
+  \end{enumerate}
+
+  \section{最後に}
+  今回は分類をわかりやすく行うということに注目して制作した．これにより，今回多かったケース分けを単純に行うことができるようになった．
+  やはり，if文などのケース分類がやりやすくなった．
+
+  \begin{thebibliography}{99}
+    \bibitem な無し
+  \end{thebibliography}
+\end{document}

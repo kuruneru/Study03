@@ -9,5 +9,6 @@ public class Magician extends Ally implements Member{
     public void skill(Character c) {
         System.out.println(super.name + "がスキル発動!");
         System.out.println(super.name + "が" + c.name + "の攻撃力を2倍にした");
+        c.atk *= 2;
     }
 }

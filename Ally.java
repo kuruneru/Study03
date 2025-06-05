@@ -1,11 +1,14 @@
 public class Ally extends Character{
-    static int count = 0;
     private int id;
 
-    /* コンストラクタ(IDも設定) */
+    /* コンストラクタ(IDも設定)←しなかった */
     public Ally(String name, int hp, int atk) {
         super(name, hp, atk);
-        this.id = count++;
+    }
+
+    /* セッター */
+    public void setId(int id) {
+        this.id = id;
     }
 
     /* ステータスとIDを出力 */

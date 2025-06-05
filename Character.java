@@ -35,6 +35,7 @@ public class Character {
 
     /* 上昇した攻撃をもとに戻す */
     public void resetStatus() {
+        /* それぞれのクラスごとに場合分けを行い攻撃力を指定のものに戻す */
         if (this instanceof Hero) {
             this.atk = 20;
         } else if (this instanceof Knight) {
